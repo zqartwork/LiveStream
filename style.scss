@@ -9,6 +9,7 @@ $lgray: #d8d8d8;
 $w: #fff;
 $b: #000;
 $font: 微軟正黑體;
+$topic: #f77;
 /*
 ------------------
 Reset Materialize 設置相關
@@ -33,12 +34,19 @@ body,
 html {
   background: $two;
   font-family: $font;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 nav {
   height: 75px;
   line-height: 1;
   background: none;
   box-shadow: none;
+}
+img {
+  height: 100%;
 }
 .container {
   width: 100%;
@@ -52,6 +60,8 @@ nav {
 
   height: 100%;
   width: 100%;
+
+  position: relative;
 }
 .flex-column {
   flex-direction: column;
@@ -75,7 +85,7 @@ nav {
   border-width: 5px 4px 0 4px;
   border-color: #d8d8d8 transparent transparent transparent;
   position: absolute;
-  right: 5px;
+  right: 3px;
   top: calc(50% - 2px);
 }
 /*
@@ -84,10 +94,147 @@ Navbar 設置相關
 ------------------
 */
 .logo {
-  margin: 0 16px 0 0;
+  margin: 0 18px 0 0;
+  height: 100%;
+  width: 200px;
+  background: $topic;
 }
-.left-nav a {
-  padding: 0 16px;
+.left-nav li {
+  height: 100%;
+  position: relative;
+
+  & a:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: $topic;
+  }
+
+  &.active {
+    background-color: rgba(0, 0, 0, 0);
+
+    a {
+      color: $topic;
+    }
+    &::after {
+      content: "";
+      background: $topic;
+      height: 5px;
+      border-radius: 5px;
+      width: 60%;
+      position: absolute;
+      bottom: 10px;
+      left: 20%;
+    }
+  }
+}
+.left-nav li a {
+  padding: 0 18px;
   position: relative;
   white-space: nowrap;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/*
+------------------
+SideNav 設置相關
+------------------
+*/
+.sidenav {
+  background-color: $fr;
+}
+.sidenav li a {
+  height: 48px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: $w;
+  padding: 0 0 0 20px;
+
+  &.sidenav-user-view {
+    height: auto;
+    line-height: 1;
+    padding: 0;
+  }
+  &.disable {
+    color: $sv;
+    font-size: 16px;
+    cursor: default;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+.sidenav-user-view-container {
+  padding: 20px 20px 20px 0;
+  width: 100%;
+}
+.sidenav-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.sidenav-head {
+  // margin-left: 20px;
+}
+.sidenav-content {
+  position: relative;
+  width: 100%;
+  padding-left: 20px;
+}
+.sidenav-name {
+  font-size: 16px;
+  display: flex;
+  i {
+    font-size: 16px;
+    color: $mdgray;
+    margin-left: 5px;
+  }
+}
+.sidenav-intro {
+  font-size: 13px;
+  margin-top: 5px;
+  line-height: 1.2;
+  white-space: normal;
+}
+.sidenav li > a > i,
+.sidenav li > a > [class^="mdi-"],
+.sidenav li > a li > a > [class*="mdi-"],
+.sidenav li > a > i.material-icons {
+  margin: 0 15px 0 0;
+  color: $lgray;
+  height: auto;
+  width: auto;
+  line-height: 1;
+  float: none;
+  font-size: 20px;
+}
+.sidenav .divider {
+  background-color: $fr;
+  margin: 0;
+  &.dp-divider {
+    background-color: $thr;
+  }
+}
+.m-user-content {
+  background-color: $thr;
+}
+
+#hotspot {
+  background-color: $topic;
+  &:hover {
+    background-color: #db5b5b;
+  }
+}
+/*
+------------------
+主要舞台區
+------------------
+*/
+.section {
+  height: 100vh;
+  width: 100%;
+}
+.section_001 {
 }
