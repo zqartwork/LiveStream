@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/*
+------------------
+Reset Materialize 設置相關
+------------------
+*/
+nav .nav-wrapper i,
+nav a.sidenav-trigger,
+nav a.sidenav-trigger i {
+  height: auto;
+  line-height: 1; }
+
+nav .sidenav-trigger i {
+  font-size: 32px; }
+
+/*
+------------------
+大整體 設置相關
+------------------
+*/
+body,
+html {
+  background: #222;
+  font-family: 微軟正黑體; }
+
+nav {
+  height: 75px;
+  line-height: 1;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px; }
+
+.flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; }
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.just-left {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+
+.just-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+/*
+------------------
+裝飾物 設置相關
+------------------
+*/
+.tri {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #d8d8d8 transparent transparent transparent;
+  position: absolute;
+  right: 5px;
+  top: calc(50% - 2px); }
+
+/*
+------------------
+Navbar 設置相關
+------------------
+*/
+.logo {
+  margin: 0 16px 0 0; }
+
+.left-nav a {
+  padding: 0 16px;
+  position: relative;
+  white-space: nowrap; }
