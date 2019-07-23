@@ -15,6 +15,12 @@ $topic: #f77;
 Reset Materialize 設置相關
 ------------------
 */
+// i.material-icons {
+//   height: auto;
+//   width: auto;
+//   line-height: 1;
+//   float: none;
+// }
 nav .nav-wrapper i,
 nav a.sidenav-trigger,
 nav a.sidenav-trigger i {
@@ -34,7 +40,7 @@ body,
 html {
   background: $two;
   font-family: $font;
-  font-size: 16px;
+  font-size: 1rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
