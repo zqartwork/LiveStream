@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- web-navbar -->
-    <nav>
+    <nav class="">
         <div class="container">
             <div class="nav-wrapper flex-wrapper">
                 <div class="flex-wrapper just-left">
                     <a href="#!" class="logo">
-                        <div class="">
+                        <div class="logo-wrapper">
                             <img src="" alt="">
                         </div>
                     </a>
@@ -103,275 +105,67 @@
     </ul>
 
     <!-- 主要舞台區 -->
-    <div id="sec_001" class="section section_001 scrollspy">
+    <div id="sec_001" class="section main-stage-section scrollspy">
         <div class="container">
-            <div class="flex_wrapper align_start">
-                <div class="video_container">
-                    <div class="main_video">
-                        <div class="video_tag_wrapper">
-                            <a href="" class="video_tag_l">影片分類</a>
-                            <a href="" class="video_tag_l">影片分類</a>
-                            <a href="" class="video_tag_l">影片分類</a>
+            <div class="flex-wrapper">
+                <div class="video-stage-wrapper">
+                    <!-- 主要影片大小與定位控制 -->
+                    <div class="main-video-wrapper">
+                        <!-- 主要影片遮罩 -->
+                        <div class="main-video-container">
+                            <!-- Video files -->
+                            <video id="my-video" class="my-video" crossorigin playsinline autoplay muted loop
+                                preload="none" poster="">
+                                <source src="demo.mp4" type="video/mp4">
+                            </video>
                         </div>
-                        <div class="caption">
-                            <div class="flex_wrapper flex_column">
-                                <div class="avatar_main">
-                                    <img src="img/avatar.png" alt="">
-                                </div>
-                                <div class="ID_main">赞星TV官方頻道</div>
-                                <div class="intro_main">專業播報精彩賽事與活動</div>
-                                <a href="#" class="main_btn">進入直播間</a>
-                                <a href="#" class="main_btn">訂閱直播主</a>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="video_list">
-                        <div class="flex_wrapper space_between">
-                            <div class="thumb current">
-                                <div class="thumb_video_title">
-                                    <div class="thumb_room_input_ID">
-                                        這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
-                                    </div>
-                                </div>
-                                <div class="thumb_info_wrapper">
-                                    <div class="flex_wrapper just_left">
-                                        <div class="thumb_avatar">
-                                            <img src="img/avatar.png" alt="">
-                                        </div>
-                                        <div class="thumb_ID">
-                                            赞星TV官方頻道
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mask"></div>
-                                <div class="poster">
-                                    <img src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.jpg"
-                                        alt="">
-                                </div>
+                    <div class="thumb-wrapper">
+                        <div class="thumb-item">
+                            <div class="thumb-img-wrapper">
+                                <img src="" alt="">
                             </div>
-                            <div class="thumb">
-                                <div class="poster">
-                                    <img src="https://ak8.picdn.net/shutterstock/videos/1018543888/thumb/1.jpg" alt="">
-                                </div>
-                                <div class="thumb_caption">
-                                    <div class="thumb_video_title">
-                                        <div class="thumb_room_input_ID">
-                                            這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
-                                        </div>
-                                    </div>
-                                    <div class="thumb_info_wrapper">
-                                        <div class="flex_wrapper just_left">
-                                            <div class="thumb_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="thumb_ID">
-                                                赞星TV官方頻道
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="thumb-item">
+                            <div class="thumb-img-wrapper">
+                                <img src="" alt="">
                             </div>
-                            <div class="thumb">
-                                <div class="poster">
-                                    <img src="https://ak0.picdn.net/shutterstock/videos/31956970/thumb/12.jpg" alt="">
-                                </div>
-                                <div class="thumb_caption">
-                                    <div class="thumb_video_title">
-                                        <div class="thumb_room_input_ID">
-                                            這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
-                                        </div>
-                                    </div>
-                                    <div class="thumb_info_wrapper">
-                                        <div class="flex_wrapper just_left">
-                                            <div class="thumb_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="thumb_ID">
-                                                赞星TV官方頻道
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="thumb-item">
+                            <div class="thumb-img-wrapper">
+                                <img src="" alt="">
                             </div>
-                            <div class="thumb">
-                                <div class="poster">
-                                    <img src="https://ak9.picdn.net/shutterstock/videos/28284139/thumb/2.jpg" alt="">
-                                </div>
-                                <div class="thumb_caption">
-                                    <div class="thumb_video_title">
-                                        <div class="thumb_room_input_ID">
-                                            這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
-                                        </div>
-                                    </div>
-                                    <div class="thumb_info_wrapper">
-                                        <div class="flex_wrapper just_left">
-                                            <div class="thumb_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="thumb_ID">
-                                                赞星TV官方頻道
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="thumb-item">
+                            <div class="thumb-img-wrapper">
+                                <img src="" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="rank_container flex_wrapper flex_column">
-                    <div class="title_wrapper flex_wrapper">
-                        <div class="flex_wrapper just_left">
-                            <div class="title_icon">
-                                <img src="img/burn.svg" alt="">
-                            </div>
-                            <div class="title_name">熱門推薦</div>
+                <div class="rank-section">
+                    <div class="section-title-wrapper">
+                        <div class="left-part">
+                            <div class="section-title-icon"></div>
+                            <div class="section-title"></div>
                         </div>
-                        <div class="flex_wrapper">
-                            <a class="flex_wrapper more just_right" href="#">
-                                更多主播
-                                <i class="material-icons">
-                                    chevron_right
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex_wrapper flex_column just_left">
-                        <div class="rank_panel">
-                            <div class="rank_header">
-                                <div class="flex_wrapper flex_column just_left">
-                                    <div class="rank_num">TOP 1</div>
-                                    <div class="avatar_main">
-                                        <img src="img/avatar.png" alt="testAvatar">
-                                    </div>
-                                    <div class="ID_main">贊星TV官方頻道</div>
-                                    <div class="intro_main">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                </div>
-                            </div>
-                            <div class="rank_body" id="rank_body_scroll">
-                                <div class="flex_wrapper flex_column align_start">
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">2</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">3</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">4</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">5</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">6</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">7</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">8</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">9</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="rank_item_wrapper">
-                                        <div class="flex_wrapper">
-                                            <div class="rank_num_other">10</div>
-                                            <div class="rank_avatar">
-                                                <img src="img/avatar.png" alt="">
-                                            </div>
-                                            <div class="rank_item_footer">
-                                                <div class="ID_rank">贊星TV官方頻道</div>
-                                                <div class="intro_rank">專業播報精彩賽事與活動，接下來就會藏起來。</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="right-part">
+                            <div class="section-title-more"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+    <div id="sec_002" class="section program-section scrollspy"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="app.js"></script>
     <script>
         $(document).ready(function () {
+            stickyNav();
             $('.sidenav').sidenav({
                 edge: 'right'
             });

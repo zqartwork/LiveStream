@@ -27,14 +27,8 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-nav {
-  height: 75px;
-  line-height: 1;
-  background: none;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
-
-img {
+img,
+video {
   height: 100%; }
 
 .container {
@@ -93,31 +87,59 @@ img {
 Navbar 設置相關
 ------------------
 */
+nav {
+  height: 75px;
+  line-height: 1;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+nav.sticky {
+  position: fixed;
+  height: 65px;
+  background: #333;
+  z-index: 10; }
+  nav.sticky .left-nav li.active::after {
+    width: 80%;
+    height: 3px;
+    left: 10%;
+    bottom: 0;
+    border-radius: 0; }
+
 .logo {
   margin: 0 18px 0 0;
-  height: 100%;
+  height: 80%;
   width: 200px;
-  background: #f77; }
+  background: #ff9900; }
+
+.logo-wrapper {
+  height: 100%; }
 
 .left-nav li {
   height: 100%;
   position: relative; }
   .left-nav li a:hover {
     background-color: rgba(0, 0, 0, 0);
-    color: #f77; }
+    color: #ff9900; }
   .left-nav li.active {
     background-color: rgba(0, 0, 0, 0); }
     .left-nav li.active a {
-      color: #f77; }
+      color: #ff9900; }
     .left-nav li.active::after {
       content: "";
-      background: #f77;
+      background: #ff9900;
       height: 5px;
       border-radius: 5px;
       width: 60%;
       position: absolute;
       bottom: 10px;
-      left: 20%; }
+      left: 20%;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
 
 .left-nav li a {
   padding: 0 18px;
@@ -215,9 +237,9 @@ SideNav 設置相關
   background-color: #333; }
 
 #hotspot {
-  background-color: #f77; }
+  background-color: #ff9900; }
   #hotspot:hover {
-    background-color: #db5b5b; }
+    background-color: #ff9900; }
 
 /*
 ------------------
@@ -226,4 +248,49 @@ SideNav 設置相關
 */
 .section {
   height: 100vh;
+  width: 100%;
+  padding: 0; }
+
+.main-stage-section {
+  height: 760px; }
+
+.video-stage-wrapper {
+  height: 100%;
+  width: 1008px;
+  margin-right: 40px; }
+
+.main-video-wrapper {
+  height: 576px; }
+
+.main-video-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; }
+
+.thumb-wrapper {
+  height: 143px;
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.thumb-item {
   width: 100%; }
+
+.thumb-item:not(:last-child) {
+  margin-right: 20px; }
+
+.thumb-img-wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden; }
+
+.rank-section {
+  height: 100%;
+  width: 400px; }
