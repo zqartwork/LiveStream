@@ -43,6 +43,9 @@ html {
 img,
 video {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .container {
   width: 100%;
@@ -157,6 +160,26 @@ nav.sticky {
   display: flex;
   align-items: center;
 }
+.fuc-btn {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 16px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.avatar-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: #fff;
+}
+.fuc_tt {
+  margin-top: 5px;
+}
+
 /*
 ------------------
 SideNav 設置相關
@@ -252,6 +275,45 @@ SideNav 設置相關
 }
 /*
 ------------------
+ScrollSpy
+------------------
+*/
+.pager-wrapper {
+  position: fixed;
+  left: 0;
+  top: 30vh;
+  z-index: 10;
+}
+.table-of-contents a,
+.table-of-contents a.active,
+.table-of-contents a:hover {
+  border: 0;
+  font-weight: 500;
+  padding-left: 45px;
+  margin-bottom: 20px;
+  color: $sv;
+  position: relative;
+}
+.dot {
+  height: 30px;
+  width: 10px;
+  background: $fr;
+  border-radius: 10px;
+  position: absolute;
+  left: 20px;
+}
+.text {
+  // display: none;
+  margin-left: 45px;
+}
+.table-of-contents a.active .dot {
+  background-color: $topic;
+}
+.table-of-contents a.active {
+  color: $topic;
+}
+/*
+------------------
 主要舞台區
 ------------------
 */
@@ -287,6 +349,28 @@ SideNav 設置相關
 }
 .thumb-item {
   width: 100%;
+  transition: 0.3s;
+  cursor: pointer;
+  &.current {
+    border: 3px solid $topic;
+    border-radius: 5px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 12px 13px 12px;
+      border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) $topic rgba(0, 0, 0, 0);
+
+      position: absolute;
+      top: -15px;
+      left: 24px;
+    }
+  }
+  &:hover {
+    filter: brightness(0.8);
+  }
 }
 .thumb-item:not(:last-child) {
   margin-right: 20px;
@@ -300,4 +384,14 @@ SideNav 設置相關
 .rank-section {
   height: 100%;
   width: 400px;
+}
+/*
+------------------
+RWD Setting
+------------------
+*/
+@media (max-width: 1024px) {
+  .md-none {
+    display: none;
+  }
 }

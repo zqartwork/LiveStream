@@ -9,9 +9,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="//vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
-    <script defer src="//vjs.zencdn.net/7.3.0/video.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +23,9 @@
         <div class="container">
             <div class="nav-wrapper flex-wrapper">
                 <div class="flex-wrapper just-left">
+                    <a href="#" data-target="m-sidenav" class="sidenav-trigger"><i class="material-icons">
+                            menu
+                        </i></a>
                     <a href="#!" class="logo">
                         <div class="logo-wrapper">
                             <img src="" alt="">
@@ -36,10 +40,35 @@
                         <li><a href="index.html">快讯</a></li>
                     </ul>
                 </div>
-                <div class="flex-wrapper just-right">
-                    <a href="#" data-target="m-sidenav" class="sidenav-trigger"><i class="material-icons">
-                            menu
-                        </i></a>
+                <div class="flex-wrapper just-right md-none">
+
+                    <a href="#" class="fuc-btn">
+                        <i class="material-icons">
+                            video_call
+                        </i>
+                        <span class="fuc_tt">直播吧</span>
+                    </a>
+                    <a href="#" class="fuc-btn">
+                        <i class="material-icons">
+                            notification_important
+                        </i>
+                        <span class="fuc_tt">通知</span>
+                    </a>
+                    <a href="#" class="fuc-btn">
+                        <i class="material-icons">
+                            question_answer
+                        </i>
+                        <span class="fuc_tt">訊息</span>
+                    </a>
+                    <a href="#" class="fuc-btn">
+                        <i class="material-icons">
+                            mobile_friendly
+                        </i>
+                        <span class="fuc_tt">客戶端</span>
+                    </a>
+                    <a href="#" class="fuc-btn">
+                        <div class="avatar-btn"></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -47,18 +76,6 @@
 
     <!-- m-sidenav -->
     <ul class="sidenav" id="m-sidenav">
-        <div class="m-main-content">
-            <li><a class="disable">某某直播 - 主要選單</a></li>
-            <div class="divider dp-divider"></div>
-            <li><a href="index.html">首頁</a></li>
-            <li><a href="index.html">节目</a></li>
-            <li><a href="index.html">直播</a></li>
-            <li><a href="index.html">视频</a></li>
-            <li><a href="index.html">分类</a></li>
-            <li><a href="index.html">快讯</a></li>
-
-            <div class="divider"></div>
-        </div>
         <div class="m-user-content">
             <li>
                 <a href="#" class="sidenav-user-view">
@@ -101,11 +118,24 @@
             <div class="divider"></div>
 
         </div>
+        <div class="m-main-content">
+            <li><a class="disable">某某直播 - 主要選單</a></li>
+            <div class="divider dp-divider"></div>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="index.html">节目</a></li>
+            <li><a href="index.html">直播</a></li>
+            <li><a href="index.html">视频</a></li>
+            <li><a href="index.html">分类</a></li>
+            <li><a href="index.html">快讯</a></li>
+
+            <div class="divider"></div>
+        </div>
 
     </ul>
 
+
     <!-- 主要舞台區 -->
-    <div id="sec_001" class="section main-stage-section scrollspy">
+    <div id="mainstage" class="section main-stage-section scrollspy">
         <div class="container">
             <div class="flex-wrapper">
                 <div class="video-stage-wrapper">
@@ -115,7 +145,8 @@
                         <div class="main-video-container">
                             <!-- Video files -->
                             <video id="my-player" class="video-js" autoplay muted loop preload="auto"
-                                poster="//vjs.zencdn.net/v/oceans.png" data-setup='{}'>
+                                poster="https://ak2.picdn.net/shutterstock/videos/1024093952/thumb/1.jpg"
+                                data-setup='{}'>
                                 <source src="demo.mp4" type="video/mp4">
                                 </source>
                                 <source src="demo.webm" type="video/webm">
@@ -126,24 +157,24 @@
                         </div>
                     </div>
                     <div class="thumb-wrapper">
-                        <div class="thumb-item">
+                        <div class="thumb-item current">
                             <div class="thumb-img-wrapper">
-                                <img src="" alt="">
+                                <img src="https://ak2.picdn.net/shutterstock/videos/1024093952/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="" alt="">
+                                <img src="https://ak2.picdn.net/shutterstock/videos/1015755862/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="" alt="">
+                                <img src="https://ak6.picdn.net/shutterstock/videos/1014547376/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="" alt="">
+                                <img src="https://ak7.picdn.net/shutterstock/videos/1026719237/thumb/1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -163,16 +194,24 @@
 
         </div>
     </div>
-    <div id="sec_002" class="section program-section scrollspy"></div>
+    <div id="program" class="section program-section scrollspy"></div>
+    <div id="list" class="section scrollspy"></div>
+    <!-- scrollspy-pager -->
+    <div class="pager-section">
+        <ul class="table-of-contents pager-wrapper">
+            <li><a href="#mainstage"><span class="dot"></span>首頁</a></li>
+            <li><a href="#program"><span class="dot"></span>節目表</a></li>
+            <li><a href="#list"><span class="dot"></span>比賽列表</a></li>
+        </ul>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="app.js"></script>
     <script>
         $(document).ready(function () {
             stickyNav();
-            $('.sidenav').sidenav({
-                edge: 'right'
-            });
+            $('.sidenav').sidenav();
+            $('.scrollspy').scrollSpy();
         });
     </script>
 </body>
