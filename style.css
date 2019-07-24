@@ -79,6 +79,18 @@ video {
           justify-content: flex-end;
 }
 
+.align-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.align-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 /*
 ------------------
 裝飾物 設置相關
@@ -130,7 +142,7 @@ nav.sticky .left-nav li.active::after {
   margin: 0 18px 0 0;
   height: 80%;
   width: 200px;
-  background: #ff9900;
+  background: #ffa600;
 }
 
 .logo-wrapper {
@@ -144,7 +156,7 @@ nav.sticky .left-nav li.active::after {
 
 .left-nav li a:hover {
   background-color: rgba(0, 0, 0, 0);
-  color: #ff9900;
+  color: #ffa600;
 }
 
 .left-nav li.active {
@@ -152,12 +164,12 @@ nav.sticky .left-nav li.active::after {
 }
 
 .left-nav li.active a {
-  color: #ff9900;
+  color: #ffa600;
 }
 
 .left-nav li.active::after {
   content: "";
-  background: #ff9900;
+  background: #ffa600;
   height: 5px;
   border-radius: 5px;
   width: 60%;
@@ -190,7 +202,7 @@ nav.sticky .left-nav li.active::after {
       -ms-flex-align: center;
           align-items: center;
   white-space: nowrap;
-  padding: 0 16px;
+  padding: 0 10px;
   font-size: 12px;
   display: flex;
   -webkit-box-orient: vertical;
@@ -314,11 +326,11 @@ SideNav 設置相關
 }
 
 #hotspot {
-  background-color: #ff9900;
+  background-color: #ffa600;
 }
 
 #hotspot:hover {
-  background-color: #ff9900;
+  background-color: #ffa600;
 }
 
 /*
@@ -339,9 +351,11 @@ ScrollSpy
   border: 0;
   font-weight: 500;
   padding-left: 45px;
-  margin-bottom: 20px;
+  margin: 10px 0;
   color: #777;
   position: relative;
+  line-height: 30px;
+  height: 30px;
 }
 
 .dot {
@@ -358,11 +372,15 @@ ScrollSpy
 }
 
 .table-of-contents a.active .dot {
-  background-color: #ff9900;
+  background-color: #ffa600;
 }
 
 .table-of-contents a.active {
-  color: #ff9900;
+  color: #ffa600;
+}
+
+.table-of-contents li {
+  padding: 0;
 }
 
 /*
@@ -388,13 +406,108 @@ ScrollSpy
 
 .main-video-wrapper {
   height: 576px;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main-video-wrapper:hover .main-video-info-panel {
+  opacity: 1;
 }
 
 .main-video-container {
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+}
+
+/*
+------------------
+主要舞台影片的狀態浮板
+------------------
+*/
+.main-video-tag-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.video-tag {
+  position: relative;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 3px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  margin: 0 5px 0 0;
+}
+
+.main-video-info-panel {
+  background: rgba(0, 0, 0, 0.8);
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.main-video-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  margin: 15px 0;
+}
+
+.main-video-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 24px;
+}
+
+.main-video-user-ID {
+  font-size: 16px;
+}
+
+.main-video-user-intro {
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 80%;
   overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0 24px 0;
+}
+
+.main-video-btn {
+  margin-bottom: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+.main-video-btn:hover {
+  background-color: #ffa600;
+  color: #000;
+  border-color: #ffa600;
 }
 
 .thumb-wrapper {
@@ -417,7 +530,7 @@ ScrollSpy
 }
 
 .thumb-item.current {
-  border: 3px solid #ff9900;
+  border: 3px solid #ffa600;
   border-radius: 5px;
   position: relative;
 }
@@ -428,19 +541,75 @@ ScrollSpy
   height: 0;
   border-style: solid;
   border-width: 0 12px 13px 12px;
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ff9900 rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffa600 rgba(0, 0, 0, 0);
   position: absolute;
   top: -15px;
   left: 24px;
 }
 
-.thumb-item:hover {
+.thumb-item.current:hover .thumb-img-wrapper {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.thumb-item:hover .thumb-img-wrapper {
   -webkit-filter: brightness(0.8);
           filter: brightness(0.8);
 }
 
 .thumb-item:not(:last-child) {
   margin-right: 20px;
+}
+
+.thumb-item-title {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: 10px;
+  left: 0;
+}
+
+.thumb-room-input-ID {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 24px;
+  height: 48px;
+  padding: 0 10px;
+}
+
+.thumb-info-wrapper {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  bottom: 10px;
+  left: 0;
+  padding: 0 10px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.thumb-avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.thumb-ID {
+  max-width: calc(100% - 65px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .thumb-img-wrapper {
@@ -450,9 +619,74 @@ ScrollSpy
   overflow: hidden;
 }
 
+/*
+------------------
+排名列表
+------------------
+*/
 .rank-section {
   height: 100%;
   width: 400px;
+  color: #fff;
+}
+
+.section-title-wrapper {
+  cursor: default;
+  width: 100%;
+}
+
+.section-title-wrapper a {
+  color: #fff;
+  line-height: 40px;
+  height: 40px;
+}
+
+.section-title-wrapper a i {
+  height: 40px;
+  line-height: 40px;
+}
+
+.section-title-icon-mask {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 100%;
+  margin-right: 14px;
+  overflow: hidden;
+}
+
+.section-title,
+.section-title-more {
+  white-space: nowrap;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*
+------------------
+Only for browser 設置相關
+------------------
+*/
+@supports (-ms-ime-align: auto) {
+  .main-video-container video {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .main-video-container video {
+    height: 100%;
+    width: auto;
+  }
+  .section-title-wrapper a i {
+    line-height: 48px;
+    height: 40px;
+  }
 }
 
 /*

@@ -138,56 +138,136 @@
     <div id="mainstage" class="section main-stage-section scrollspy">
         <div class="container">
             <div class="flex-wrapper">
+                <!-- 影片舞台區 -->
                 <div class="video-stage-wrapper">
-                    <!-- 主要影片大小與定位控制 -->
+                    <!-- 主要影片大小與定位控制 and 遮罩 -->
                     <div class="main-video-wrapper">
-                        <!-- 主要影片遮罩 -->
-                        <div class="main-video-container">
-                            <!-- Video files -->
-                            <video id="my-player" class="video-js" autoplay muted loop preload="auto"
-                                poster="https://ak2.picdn.net/shutterstock/videos/1024093952/thumb/1.jpg"
-                                data-setup='{}'>
-                                <source src="demo.mp4" type="video/mp4">
-                                </source>
-                                <source src="demo.webm" type="video/webm">
-                                </source>
-                                <source src="demo.ogv" type="video/ogg">
-                                </source>
-                            </video>
+                        <div class="main-video-tag-wrapper">
+                            <a href="#" class="main-video-tag video-tag">NBA</a>
+                            <a href="#" class="main-video-tag video-tag">訪問</a>
+                        </div>
+
+                        <a href="#">
+                            <div class="main-video-container">
+                                <!-- Video files -->
+                                <video id="my-player" class="video-js" autoplay muted loop preload="auto"
+                                    poster="https://ak5.picdn.net/shutterstock/videos/1031617565/thumb/1.jpg"
+                                    data-setup='{}'>
+                                    <source src="demo.mp4" type="video/mp4">
+                                    </source>
+                                    <source src="demo.webm" type="video/webm">
+                                    </source>
+                                    <source src="demo.ogv" type="video/ogg">
+                                    </source>
+                                </video>
+                            </div>
+                        </a>
+                        <div class="main-video-info-panel">
+                            <div class="flex-wrapper flex-column">
+                                <a href="#">
+                                    <div class="main-video-avatar">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                </a>
+                                <div class="main-video-info">
+                                    <div class="main-video-user-ID">某某直播官方頻道</div>
+                                    <div class="main-video-user-intro">這裡是頻道簡介，專業轉播各大體育賽事。</div>
+                                    <a href="#" class="main-video-btn">進入直播間</a>
+                                    <a href="#" class="main-video-btn">訂閱直播主</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- 影片縮圖列表 -->
                     <div class="thumb-wrapper">
                         <div class="thumb-item current">
+                            <div class="thumb-item-title">
+                                <div class="thumb-room-input-ID">
+                                    這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                </div>
+                            </div>
+                            <div class="thumb-info-wrapper">
+                                <div class="flex-wrapper just-left">
+                                    <div class="thumb-avatar">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                    <div class="thumb-ID">
+                                        某某TV官方頻道某某TV官方頻道某某TV官方頻道
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mask"></div>
                             <div class="thumb-img-wrapper">
-                                <img src="https://ak2.picdn.net/shutterstock/videos/1024093952/thumb/1.jpg" alt="">
+                                <img src="https://ak5.picdn.net/shutterstock/videos/1031617565/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="https://ak2.picdn.net/shutterstock/videos/1015755862/thumb/1.jpg" alt="">
+                                <img src="https://ak7.picdn.net/shutterstock/videos/1031641127/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="https://ak6.picdn.net/shutterstock/videos/1014547376/thumb/1.jpg" alt="">
+                                <img src="https://ak1.picdn.net/shutterstock/videos/29470981/thumb/12.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
                             <div class="thumb-img-wrapper">
-                                <img src="https://ak7.picdn.net/shutterstock/videos/1026719237/thumb/1.jpg" alt="">
+                                <img src="https://ak6.picdn.net/shutterstock/videos/24827696/thumb/1.jpg" alt="">
                             </div>
                             <div class="thumb-name"></div>
                         </div>
                     </div>
                 </div>
+                <!-- 熱門推薦與排名列表 -->
                 <div class="rank-section">
-                    <div class="section-title-wrapper">
-                        <div class="left-part">
-                            <div class="section-title-icon"></div>
-                            <div class="section-title"></div>
+                    <!-- 大標題標準格式 -->
+                    <div class="flex-wrapper flex-column just-left ">
+                        <div class="section-title-wrapper">
+                            <div class="flex-wrapper">
+                                <div class="flex-wrapper just-left">
+                                    <div class="section-title-icon-mask">
+                                        <img src="img/burn.svg" alt="">
+                                    </div>
+                                    <div class="section-title">熱門推薦</div>
+                                </div>
+                                <div class="flex-wrapper just-right">
+                                    <a href="#">
+                                        <div class="flex-wrapper">
+                                            <div class="section-title-more">更多推薦</div>
+                                            <i class="material-icons">
+                                                chevron_right
+                                            </i>
+                                        </div>
+
+                                    </a>
+
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="right-part">
-                            <div class="section-title-more"></div>
+                        <div class="rank-panel-section">
+                            <div class="rank-panel-head">
+                                <div class="rank-num">TOP 1</div>
+                                <div class="rank-first-avatar">
+                                    <img src="img/avatar.png" alt="">
+                                </div>
+                                <div class="rank-panel-name">某某直播官方頻道</div>
+                                <div class="rank-panel-intro">這裡是頻道簡介，專業轉播各大體育賽事。</div>
+                            </div>
+                            <div class="rank-panel-body">
+                                <div class="rank-panel-item">
+                                    <div class="rank-panel-item-head">
+                                        <div class="rank-panel-item-avatar">
+                                            <img src="img/avatar.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="rank-panel-item-body">
+                                        <div class="rank-panel-item-name">嗨嗨我是餅乾</div>
+                                        <div class="rank-panel-item-intro">這我是很邪惡的餅乾，喜歡看美劇。</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
