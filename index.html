@@ -11,15 +11,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
+    <link rel="stylesheet" href="plugins/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="plugins/owlcarousel/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- web-navbar -->
-    <nav class="">
+    <nav>
         <div class="container">
             <div class="nav-wrapper flex-wrapper">
                 <div class="flex-wrapper just-left">
@@ -28,7 +29,7 @@
                         </i></a>
                     <a href="#!" class="logo">
                         <div class="logo-wrapper">
-                            <img src="" alt="">
+                            <!-- <img src="img/logo.png" alt=""> -->
                         </div>
                     </a>
                     <ul class="flex-wrapper just-left left-nav hide-on-med-and-down">
@@ -183,7 +184,7 @@
                         <div class="thumb-item current">
                             <div class="thumb-item-title">
                                 <div class="thumb-room-input-ID">
-                                    這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松這裡是自訂的房間名稱：全職獵人馬拉松
+                                    這裡是自訂的房間名稱：NBA好朋友來打球囉你當球，因為字很多
                                 </div>
                             </div>
                             <div class="thumb-info-wrapper">
@@ -202,16 +203,61 @@
                             </div>
                         </div>
                         <div class="thumb-item">
+                            <div class="thumb-item-title">
+                                <div class="thumb-room-input-ID">
+                                    猜猜這是哪一隊的吉祥物。猜對了可以參加抽獎喔
+                                </div>
+                            </div>
+                            <div class="thumb-info-wrapper">
+                                <div class="flex-wrapper just-left">
+                                    <div class="thumb-avatar">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                    <div class="thumb-ID">
+                                        某某TV官方頻道某某TV官方頻道某某TV官方頻道
+                                    </div>
+                                </div>
+                            </div>
                             <div class="thumb-img-wrapper">
                                 <img src="https://ak7.picdn.net/shutterstock/videos/1031641127/thumb/1.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
+                            <div class="thumb-item-title">
+                                <div class="thumb-room-input-ID">
+                                    究竟會不會打出全壘打?!
+                                </div>
+                            </div>
+                            <div class="thumb-info-wrapper">
+                                <div class="flex-wrapper just-left">
+                                    <div class="thumb-avatar">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                    <div class="thumb-ID">
+                                        某某TV官方頻道某某TV官方頻道某某TV官方頻道
+                                    </div>
+                                </div>
+                            </div>
                             <div class="thumb-img-wrapper">
                                 <img src="https://ak1.picdn.net/shutterstock/videos/29470981/thumb/12.jpg" alt="">
                             </div>
                         </div>
                         <div class="thumb-item">
+                            <div class="thumb-item-title">
+                                <div class="thumb-room-input-ID">
+                                    英雄聯盟 LMS 夏季季後賽
+                                </div>
+                            </div>
+                            <div class="thumb-info-wrapper">
+                                <div class="flex-wrapper just-left">
+                                    <div class="thumb-avatar">
+                                        <img src="img/avatar.png" alt="">
+                                    </div>
+                                    <div class="thumb-ID">
+                                        某某TV官方頻道某某TV官方頻道某某TV官方頻道
+                                    </div>
+                                </div>
+                            </div>
                             <div class="thumb-img-wrapper">
                                 <img src="https://ak6.picdn.net/shutterstock/videos/24827696/thumb/1.jpg" alt="">
                             </div>
@@ -221,8 +267,8 @@
                 </div>
                 <!-- 熱門推薦與排名列表 -->
                 <div class="rank-section">
-                    <!-- 大標題標準格式 -->
                     <div class="flex-wrapper flex-column just-left ">
+                        <!-- 大標題標準格式 -->
                         <div class="section-title-wrapper">
                             <div class="flex-wrapper">
                                 <div class="flex-wrapper just-left">
@@ -246,7 +292,9 @@
                             </div>
 
                         </div>
+                        <!-- 排名列表 -->
                         <div class="rank-panel-section">
+                            <!-- 第一名區域 -->
                             <div class="rank-panel-head">
                                 <div class="rank-num">TOP 1</div>
                                 <div class="rank-first-avatar">
@@ -255,16 +303,151 @@
                                 <div class="rank-panel-name">某某直播官方頻道</div>
                                 <div class="rank-panel-intro">這裡是頻道簡介，專業轉播各大體育賽事。</div>
                             </div>
-                            <div class="rank-panel-body">
+                            <!-- 其他排名區域 -->
+                            <div class="rank-panel-body" id="itemscroll">
+                                <!-- rank-item -->
                                 <div class="rank-panel-item">
-                                    <div class="rank-panel-item-head">
-                                        <div class="rank-panel-item-avatar">
-                                            <img src="img/avatar.png" alt="">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">2</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">嗨嗨我是餅乾</div>
+                                            <div class="rank-panel-item-intro">
+                                                專業電腦繪圖與設計製作</div>
                                         </div>
                                     </div>
-                                    <div class="rank-panel-item-body">
-                                        <div class="rank-panel-item-name">嗨嗨我是餅乾</div>
-                                        <div class="rank-panel-item-intro">這我是很邪惡的餅乾，喜歡看美劇。</div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">3</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">挖丟系歹霸欸囝仔</div>
+                                            <div class="rank-panel-item-intro">
+                                                英雄聯盟宗師打野玩家</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">4</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">勒布朗朗上口</div>
+                                            <div class="rank-panel-item-intro">
+                                                一起來下棋！</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">5</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">Redd</div>
+                                            <div class="rank-panel-item-intro">
+                                                水管一直播</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">6</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">薛爾頓古柏</div>
+                                            <div class="rank-panel-item-intro">
+                                                我是有強迫症的超級帥主播</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">7</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">第七名的主播</div>
+                                            <div class="rank-panel-item-intro">
+                                                足球狂熱飯</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">8</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">JeanOuO</div>
+                                            <div class="rank-panel-item-intro">
+                                                美式繪不繪，一起來畫圖吧！</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">9</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">英雄聯盟 LCK 官方頻道</div>
+                                            <div class="rank-panel-item-intro">
+                                                韓國賽區 LCK 專業英雄聯盟播報，熱血開播！
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rank-item -->
+                                <div class="rank-panel-item">
+                                    <div class="flex-wrapper just-left">
+                                        <div class="rank-num">10</div>
+                                        <div class="rank-panel-item-head">
+                                            <div class="rank-panel-item-avatar">
+                                                <img src="img/avatar.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="rank-panel-item-body">
+                                            <div class="rank-panel-item-name">小蕾兒OuO</div>
+                                            <div class="rank-panel-item-intro">
+                                                唉唷我又胖了啦~討厭~~</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -275,24 +458,431 @@
 
         </div>
     </div>
-    <div id="program" class="section program-section scrollspy"></div>
-    <div id="list" class="section scrollspy"></div>
+    <div id="program" class="section program-section scrollspy">
+        <div class="container">
+            <!-- 大標題標準格式 -->
+            <div class="section-title-wrapper">
+                <div class="flex-wrapper">
+                    <div class="flex-wrapper just-left">
+                        <div class="section-title-icon-mask">
+                            <img src="img/channel.svg" alt="">
+                        </div>
+                        <div class="section-title">節目表</div>
+                        <div class="select_container">
+                            <div class="flex-wrapper">
+                                <div class="custom_select">
+                                    <div class="select_title">
+                                        <div class="flex-wrapper just-left">
+                                            <span class="selected">選擇時間</span>
+                                            <i class="material-icons select_i">
+                                                chevron_right
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="date" id="data_input">
+                                    <ul class="select_menu">
+                                        <li id="20190718">07 / 18</li>
+                                        <li id="20190719">07 / 19</li>
+                                        <li id="20190720">07 / 20</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="filter_tag ">今日</a>
+                        <a class="filter_tag">昨日</a>
+                        <a class="filter_tag">明日</a>
+
+                    </div>
+                    <div class="flex-wrapper just-right">
+                        <a href="#">
+                            <div class="flex-wrapper">
+                                <div class="section-title-more">更多推薦</div>
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </div>
+
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 節目表區塊 -->
+            <div class="program-wrapper">
+                <div class="flex-wrapper just-left">
+                    <!-- 節目種類選單 -->
+                    <div class="program-left-part">
+                        <div class="program-list-wrapper">
+                            <div class="program-type-title program-type">節目種類</div>
+                            <ul id="itemscroll" class="program-item-body">
+                                <li class="program-type">娛樂</li>
+                                <li class="program-type">體育</li>
+                                <li class="program-type">英雄聯盟</li>
+                                <li class="program-type">世界之巔</li>
+                                <li class="program-type">魔鏡娛樂</li>
+                                <li class="program-type">魔鏡娛樂</li>
+                                <li class="program-type">魔鏡娛樂</li>
+                                <li class="program-type">魔鏡娛樂</li>
+                                <li class="program-type">魔鏡娛樂</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 節目內容列表 -->
+                    <div class="program-right-part">
+                        <div class="program-carousel owl-carousel owl-theme">
+                            <!-- 主要大圖 -->
+                            <div class="hot-program-item program-item item">
+                                <a href="#" class="preserved-btn preserved-btn-l">
+                                    <div>
+                                        <div class="flex-wrapper flex-column">
+                                            <i class="material-icons">
+                                                add_alert
+                                            </i>
+                                            <div class="preserved-text">
+                                                預定
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="program-caption-wrapper">
+                                    <div class="program-date">
+                                        2019年07月24日 下午 3:00
+                                    </div>
+                                    <div class="program-title program-title-l">
+                                        西甲體育盛事，終於開打啦！
+                                    </div>
+                                </div>
+                                <div class="program-item-img">
+                                    <div class="mask"></div>
+                                    <img src="img/demo.jpg" alt="">
+                                </div>
+                            </div>
+                            <!-- 其他item -->
+                            <div class="program-item-wrapper item">
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="program-item-wrapper item">
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="program-item-wrapper item">
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="program-item-wrapper item">
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="program-item-wrapper item">
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="program-item">
+                                    <a href="#" class="preserved-btn">
+                                        <div>
+                                            <div class="flex-wrapper flex-column">
+                                                <i class="material-icons">
+                                                    add_alert
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="program-caption-wrapper">
+                                        <div class="program-date">
+                                            2019年07月24日 下午 3:00
+                                        </div>
+                                        <div class="program-title">
+                                            西甲體育盛事，終於開打啦！
+                                        </div>
+                                    </div>
+                                    <div class="program-item-img">
+                                        <div class="mask"></div>
+                                        <img src="img/replace.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="matchlist" class="section scrollspy match-section">
+        <div class="container">
+            <!-- 大標題標準格式 -->
+            <div class="section-title-wrapper">
+                <div class="flex-wrapper">
+                    <div class="flex-wrapper just-left">
+                        <div class="section-title-icon-mask">
+                            <img src="img/match.svg" alt="">
+                        </div>
+                        <div class="section-title">賽程列表</div>
+                        <div class="select_container">
+                            <div class="flex-wrapper">
+                                <div class="custom_select">
+                                    <div class="select_title">
+                                        <div class="flex-wrapper just-left">
+                                            <span class="selected">選擇時間</span>
+                                            <i class="material-icons select_i">
+                                                chevron_right
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="date" id="data_input">
+                                    <ul class="select_menu">
+                                        <li id="20190718">07 / 18</li>
+                                        <li id="20190719">07 / 19</li>
+                                        <li id="20190720">07 / 20</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="filter_tag ">今日</a>
+                        <a class="filter_tag">昨日</a>
+                        <a class="filter_tag">明日</a>
+
+                    </div>
+                    <div class="flex-wrapper just-right">
+                        <a href="#">
+                            <div class="flex-wrapper">
+                                <div class="section-title-more">更多推薦</div>
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </div>
+
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- scrollspy-pager -->
     <div class="pager-section">
         <ul class="table-of-contents pager-wrapper">
             <li><a href="#mainstage"><span class="dot"></span>首頁</a></li>
             <li><a href="#program"><span class="dot"></span>節目表</a></li>
-            <li><a href="#list"><span class="dot"></span>比賽列表</a></li>
+            <li><a href="#matchlist"><span class="dot"></span>比賽列表</a></li>
         </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="plugins/owlcarousel/owl.carousel.min.js"></script>
     <script src="app.js"></script>
     <script>
         $(document).ready(function () {
             stickyNav();
             $('.sidenav').sidenav();
             $('.scrollspy').scrollSpy();
+            selectCustom();
+            activeTag();
+            $('.program-carousel').owlCarousel({
+                dots: false,
+                autoWidth: true,
+                nav: true,
+                navText: ["<i class='material-icons arr'>chevron_left</i>", "<i class='material-icons arr'>chevron_right</i>"]
+            });
         });
     </script>
 </body>

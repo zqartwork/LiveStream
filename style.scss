@@ -9,7 +9,7 @@ $lgray: #d8d8d8;
 $w: #fff;
 $b: #000;
 $font: 微軟正黑體;
-$topic: rgb(255, 166, 0);
+$topic: rgb(255, 173, 51);
 
 /*
 ------------------
@@ -36,7 +36,9 @@ nav .sidenav-trigger i {
 大整體 設置相關
 ------------------
 */
-
+* {
+  outline: 0;
+}
 body,
 html {
   background: $two;
@@ -108,10 +110,13 @@ Navbar 設置相關
 nav {
   height: 75px;
   line-height: 1;
-  background: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
   box-shadow: none;
 
   transition: 0.5s;
+  position: relative;
+  z-index: 10;
 }
 nav.sticky {
   position: fixed;
@@ -304,7 +309,7 @@ ScrollSpy
   font-weight: 500;
   padding-left: 45px;
   margin: 10px 0;
-  color: $sv;
+  color: $mdgray;
   position: relative;
   line-height: 30px;
   height: 30px;
@@ -312,7 +317,7 @@ ScrollSpy
 .dot {
   height: 30px;
   width: 10px;
-  background: $fr;
+  background: $sv;
   border-radius: 10px;
   position: absolute;
   left: 20px;
@@ -332,6 +337,47 @@ ScrollSpy
 }
 /*
 ------------------
+各區塊標題設置
+------------------
+*/
+.section-title-wrapper {
+  cursor: default;
+  width: 100%;
+  color: $w;
+  margin-bottom: 14px;
+  a {
+    color: $w;
+    line-height: 40px;
+    height: 40px;
+    &.filter_tag {
+      height: auto;
+      line-height: 1;
+    }
+    i {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+.section-title-icon-mask {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 100%;
+  margin-right: 14px;
+  overflow: hidden;
+}
+.section-title,
+.section-title-more {
+  white-space: nowrap;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+/*
+------------------
 主要舞台區
 ------------------
 */
@@ -342,6 +388,21 @@ ScrollSpy
 }
 .main-stage-section {
   height: 760px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url(img/bg.png);
+    background-color: $thr;
+    background-position: center;
+    background-size: cover;
+    height: calc(100% + 75px);
+    width: 100%;
+    position: absolute;
+    top: -75px;
+    z-index: 0;
+    // filter: brightness(0.4) grayscale(1);
+  }
 }
 .video-stage-wrapper {
   height: 100%;
@@ -449,11 +510,13 @@ ScrollSpy
   justify-content: space-between;
 }
 .thumb-item {
+  border: 3px solid rgba(0, 0, 0, 0);
   width: 100%;
   transition: 0.3s;
   cursor: pointer;
+  position: relative;
   &.current {
-    border: 3px solid $topic;
+    border-color: $topic;
     border-radius: 5px;
     position: relative;
     &::before {
@@ -490,6 +553,7 @@ ScrollSpy
 
   top: 10px;
   left: 0;
+  opacity: 0;
 }
 .thumb-room-input-ID {
   overflow: hidden;
@@ -512,6 +576,26 @@ ScrollSpy
   padding: 0 10px;
   max-width: 100%;
   overflow: hidden;
+  opacity: 0;
+}
+.thumb-item-title,
+.thumb-info-wrapper {
+  transition: 0.2s;
+}
+.thumb-item.current {
+  .thumb-item-title,
+  .thumb-info-wrapper {
+    opacity: 1;
+  }
+}
+.thumb-item:hover {
+  .thumb-item-title,
+  .thumb-info-wrapper {
+    opacity: 1;
+  }
+  .thumb-img-wrapper {
+    filter: brightness(0.5);
+  }
 }
 .thumb-avatar {
   height: 35px;
@@ -549,39 +633,371 @@ ScrollSpy
   width: 400px;
   color: $w;
 }
-.section-title-wrapper {
-  cursor: default;
+
+/*
+------------------
+排名列表(head)
+------------------
+*/
+.rank-panel-section {
   width: 100%;
-  a {
-    color: $w;
-    line-height: 40px;
-    height: 40px;
-    i {
-      height: 40px;
-      line-height: 40px;
-    }
-  }
+  height: 684px;
+  background: $fr;
+  border-radius: 5px;
 }
-.section-title-icon-mask {
-  height: 40px;
-  width: 40px;
-  min-height: 40px;
-  min-width: 40px;
+.rank-panel-head {
+  text-align: center;
+  padding: 30px 0;
+}
+.rank-first-avatar {
+  height: 100px;
+  width: 100px;
   border-radius: 100%;
-  margin-right: 14px;
   overflow: hidden;
+  margin: 10px auto;
 }
-.section-title,
-.section-title-more {
+.rank-panel-intro {
+  font-size: 14px;
+  margin-top: 5px;
+
+  max-width: 60%;
+  margin: 5px auto 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
   white-space: nowrap;
-}
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
 }
 /*
 ------------------
-Only for browser 設置相關
+排名列表(list)
+------------------
+*/
+.rank-panel-body {
+  max-height: 420px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 352px;
+  margin: 0 auto;
+}
+#itemscroll::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+  border-radius: 5px;
+}
+#itemscroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+.rank-panel-item {
+  width: 100%;
+  margin-bottom: 10px;
+  .rank-num {
+    min-width: 20px;
+  }
+}
+.rank-panel-item-avatar {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+.rank-panel-item-body {
+  width: 100%;
+  height: 100%;
+}
+.rank-panel-item-intro {
+  font-size: 13px;
+  margin-top: 5px;
+  width: 270px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*
+------------------
+節目表
+------------------
+*/
+.program-section {
+  margin-top: 45px;
+  margin-bottom: 80px;
+  height: auto;
+}
+.program-wrapper {
+  width: 100%;
+  height: 270px;
+}
+.program-left-part {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.program-item-body {
+  max-height: 270px;
+  overflow-y: scroll;
+  padding-top: 45px;
+}
+.program-type {
+  width: 225px;
+  height: 45px;
+  background: $fr;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+
+  border-bottom: 1px solid $two;
+  color: $w;
+
+  &:hover {
+    background: $thr;
+  }
+  &.active {
+    background: $topic;
+    color: $b;
+    font-weight: 700;
+  }
+}
+.program-type-title {
+  position: absolute;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  top: 0;
+  left: 0;
+  color: $sv;
+  cursor: default;
+  &:hover {
+    background: $fr;
+  }
+}
+/*
+------------------
+節目表本人
+------------------
+*/
+.program-carousel {
+  position: relative;
+  height: 270px;
+}
+.program-right-part {
+  width: calc(100% - 230px);
+  padding-left: 35px;
+}
+.program-item {
+  height: 128px;
+  width: 224px;
+  background: $fr;
+  margin-right: 14px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+
+  &:nth-child(odd) {
+    margin-bottom: 14px;
+  }
+
+  &.hot-program-item {
+    height: 270px;
+    margin: 0 14px 0 0;
+    width: 480px;
+  }
+  &:hover {
+  }
+}
+.program-caption-wrapper {
+  position: absolute;
+  z-index: 1;
+  bottom: 14px;
+  left: 0;
+
+  padding: 0 14px;
+
+  .program-date {
+    color: $w;
+    margin-bottom: 10px;
+  }
+  .program-title {
+    color: $w;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 196px;
+    text-overflow: ellipsis;
+    &-l {
+      font-size: 24px;
+      max-width: 432px;
+    }
+  }
+}
+.preserved-btn {
+  position: absolute;
+  z-index: 1;
+
+  color: $w;
+
+  right: 14px;
+  top: 14px;
+
+  &:hover {
+    color: $topic;
+  }
+  &-l {
+    border-radius: 5px;
+    padding: 12px 24px;
+    border: 1px solid $w;
+    &:hover {
+      background-color: $topic;
+      color: $b;
+      border-color: $topic;
+    }
+  }
+}
+.preserved-text {
+  margin-top: 5px;
+}
+.owl-theme .owl-nav {
+  height: 0;
+  margin: 0;
+  position: relative;
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+  height: 72px;
+  width: 72px;
+  border-radius: 100%;
+  background-color: $fr;
+
+  &:hover {
+    background-color: $topic;
+    .arr {
+      color: $b;
+    }
+  }
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+.owl-carousel .owl-nav button.owl-prev {
+  left: -40px;
+  top: -175px;
+}
+.owl-carousel .owl-nav button.owl-next {
+  right: -40px;
+  top: -175px;
+}
+.arr {
+  font-size: 40px;
+  line-height: 72px;
+  width: 72px;
+  color: $w;
+}
+/*
+------------------
+自訂樣式選單
+------------------
+*/
+.msg,
+.select_container_title {
+  color: #fff;
+  padding: 5px 0 10px;
+}
+
+.select_container {
+  text-align: center;
+  margin-left: 15px;
+}
+
+.custom_select {
+  display: inline-block;
+  background-color: $two;
+  color: #fff;
+  border-radius: 40px;
+  transition: all 0.5s ease;
+  position: relative;
+  height: 100%;
+  text-align: left;
+  border: 1px solid $fr;
+  &:hover {
+    background: $thr;
+  }
+}
+.select_title {
+  cursor: pointer;
+  height: 100%;
+}
+.selected {
+  padding: 8px 5px 8px 15px;
+  white-space: nowrap;
+}
+.select_i {
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-right: 5px;
+}
+
+.custom_select:active {
+  background-color: $thr;
+}
+.custom_select.active:hover,
+.custom_select.active {
+  border-radius: 5px 5px 0 0;
+  background-color: $thr;
+  border: none;
+}
+.custom_select.active .select_i {
+  transform: rotate(90deg);
+}
+.select_menu {
+  position: absolute;
+  background-color: $thr;
+  width: 100%;
+  left: 0;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  display: none;
+  max-height: 144px;
+  overflow-y: auto;
+  z-index: 9;
+  padding: 0;
+  list-style: none;
+}
+.select_menu > li {
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.select_menu > li:hover {
+  background-color: $fr;
+}
+.select_menu > li:active {
+  background-color: #e2e2e2;
+}
+.filter_tag {
+  border: 1px solid $fv;
+  padding: 8px 15px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+  white-space: nowrap;
+
+  &:hover {
+    background: $thr;
+  }
+  &.active {
+    background: $fv;
+  }
+}
+
+/*
+------------------
+For browser 設置相關
 ------------------
 */
 @supports (-ms-ime-align: auto) {
@@ -598,6 +1014,10 @@ Only for browser 設置相關
   .section-title-wrapper a i {
     line-height: 48px;
     height: 40px;
+  }
+  .select_i {
+    line-height: 40px;
+    height: 32px;
   }
 }
 /*
