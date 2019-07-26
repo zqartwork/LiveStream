@@ -39,6 +39,14 @@ nav .sidenav-trigger i {
 * {
   outline: 0;
 }
+::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: $topic;
+}
 body,
 html {
   background: $two;
@@ -95,6 +103,7 @@ video {
 .space-between {
   justify-content: space-between;
 }
+
 /*
 ------------------
 裝飾物 設置相關
@@ -409,7 +418,7 @@ ScrollSpy
     background-color: $thr;
     background-position: center;
     background-size: cover;
-    height: calc(100% + 75px);
+    height: 840px;
     width: 100%;
     position: absolute;
     top: -75px;
@@ -424,6 +433,7 @@ ScrollSpy
 }
 .main-video-wrapper {
   height: 576px;
+  width: calc(576px * 16 / 9);
   position: relative;
   max-height: 100%;
   max-width: 100%;
@@ -1100,6 +1110,7 @@ ScrollSpy
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  margin: 0 14px;
 }
 .matchlist-time,
 .matchlist-name,
@@ -1141,7 +1152,7 @@ ScrollSpy
   margin-bottom: 80px;
 }
 .news-wrapper {
-  width: 462px;
+  width: 100%;
   background-color: $thr;
   border-radius: 5px;
 }
@@ -1159,6 +1170,10 @@ ScrollSpy
 }
 .new-title-text {
   font-weight: 700;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .news-partial {
   max-width: 100%;
@@ -1211,6 +1226,12 @@ ScrollSpy
 }
 .news-left-part {
   margin-right: 24px;
+  width: 100%;
+  max-width: 451px;
+  position: relative;
+}
+.news-right-part {
+  width: calc(100% - 451px);
 }
 /*
 ------------------
@@ -1221,34 +1242,62 @@ ScrollSpy
   margin-bottom: 80px;
 }
 .hot-video-list-wrapper {
-  width: 100%;
+  width: auto;
+  margin: 0 auto;
   display: flex;
+  // flex-direction: column;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
-
-  max-height: 405px;
+  // justify-content: space-between;
+  max-width: 100%;
   overflow: hidden;
 }
+// .hot-line {
+//   display: flex;
+//   flex-wrap: nowrap;
+//   -ms-flex-wrap: nowrap;
+//   justify-content: space-between;
+// }
 /*
 ------------------
 小格影片固定格式
 ------------------
 */
+
 .hot-video-item {
-  height: auto;
-  width: 224px;
+  height: 100%;
+  width: 100%;
+  max-width: calc(25% - 14px);
   overflow: hidden;
   border-radius: 5px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  margin-right: 14px;
 }
 .hot-video-list-wrapper.sq .hot-video-item {
-  margin-left: 14px;
+  // margin-right: 14px;
 }
 .hot-video-list-wrapper.nm .hot-video-item {
-  margin-left: 16px;
+  max-width: calc(100% / 6 - 14px);
+  // margin-right: 16px;
 }
+
 .hot-video-head {
-  height: 126px;
+  height: auto;
+}
+.hot-video-thumb-wrapper {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 .hot-video-body {
   background: $fr;
@@ -1392,13 +1441,172 @@ RWD Setting
     display: none;
   }
 }
+
 @media (max-width: 1500px) {
+  // 整體設定
   .container {
     max-width: calc(100% - 48px);
   }
+  .flex-wrap-md {
+    flex-wrap: wrap;
+  }
+  // 主要舞台區排名列表調整
+  .main-stage-section {
+    height: auto;
+  }
+  .video-stage-wrapper {
+    margin: 0;
+  }
+  .rank-section {
+    margin-top: 80px;
+    width: 100%;
+  }
+  .rank-panel-section {
+    height: auto;
+    display: flex;
+    padding-left: 0;
+  }
+  .rank-panel-head {
+    width: 220px;
+  }
+  .rank-panel-body {
+    height: auto;
+    max-height: 256px;
+    overflow: auto;
+    margin: auto 0;
+    .item .rank-panel-item {
+      margin: 0;
+    }
+    .item .rank-panel-item:first-child {
+      margin-bottom: 24px;
+    }
+  }
+  .rank-panel-item {
+    width: 280px;
+    overflow: hidden;
+  }
+  .rank-panel-item-intro {
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1329px) {
+  .hot-video-item:nth-last-child(-n + 2) {
+    display: none;
+  }
+  .hot-video-item {
+    max-width: calc(100% / 3 - 14px);
+  }
+}
+
+@media (max-width: 1120px) {
+  .news-flex-wrap {
+    flex-wrap: wrap;
+  }
+  .news-left-part {
+    width: 100%;
+  }
+  .hot-video-item:nth-last-child(-n + 4) {
+    display: none;
+  }
+  .hot-video-item {
+    max-width: calc(100% / 2 - 14px);
+  }
+}
+@media (max-width: 1060px) {
   .md-none {
+    display: none;
+  }
+  .left-nav {
+    display: none;
+  }
+  .nav a.sidenav-trigger {
+    display: inline-block;
+  }
+  nav .sidenav-trigger {
+    margin: 0;
+  }
+  .video-stage-wrapper {
+    width: 100%;
+    height: auto;
+  }
+  .main-video-wrapper {
+    height: auto;
+    width: auto;
+  }
+  .main-video-tag-wrapper {
+    z-index: 1;
+  }
+  .main-video-container {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .main-stage-section::before {
+    height: calc(80vw - 80px);
+  }
+  .rank-section {
+    margin-top: 40px;
+  }
+  .program-section {
+    padding-top: 40px;
+  }
+  .match-section {
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 998px) {
+  .thumb-wrapper .thumb-item:last-child {
+    display: none;
+  }
+  .thumb-wrapper .thumb-item:nth-child(3) {
+    margin: 0;
+  }
+}
+@media (max-width: 980px) {
+  .hot-video-cl {
+    flex-wrap: wrap;
+  }
+  .news-left-part {
+    max-width: 100%;
+  }
+  .news-right-part {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .hot-video-item:nth-last-child(-n + 4) {
+    display: initial;
+  }
+  .hot-video-item {
+    max-width: calc(100% / 3 - 14px);
+  }
+}
+@media (max-width: 768px) {
+}
+// reset Mataerialize
+@media only screen and (min-width: 993px) {
+  nav a.sidenav-trigger {
+    display: initial;
+  }
+}
+@media only screen and (min-width: 1061px) {
+  nav a.sidenav-trigger {
     display: none;
   }
 }

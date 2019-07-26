@@ -46,3 +46,64 @@ let activeTag = function () {
         $(this).removeClass('active');
     })
 }
+let madeCarousel = function () {
+    $('.program-carousel').owlCarousel({
+        dots: false,
+        autoWidth: true,
+        nav: true,
+        navText: ["<i class='material-icons arr'>chevron_left</i>", "<i class='material-icons arr'>chevron_right</i>"]
+    });
+    $('.matchlist-carousel').owlCarousel({
+        dots: false,
+        nav: true,
+        margin: 20,
+        navText: ["<i class='material-icons arr'>chevron_left</i>", "<i class='material-icons arr'>chevron_right</i>"],
+        responsive: {
+            0: {
+                items: 1,
+                autoWidth: false,
+            },
+            500: {
+                items: 2,
+                autoWidth: true,
+            }
+        }
+    });
+    $('.news-carousel').owlCarousel({
+        items: 1,
+        dots: true,
+        nav: true,
+        margin: 24,
+        navText: ["<i class='material-icons arr'>chevron_left</i>", "<i class='material-icons arr'>chevron_right</i>"]
+    });
+    if ($(window).width() < 1495) {
+        $('.rank-panel-body').owlCarousel({
+            items: 1,
+            dots: false,
+            nav: false,
+            autoWidth: true,
+            margin: 15,
+        });
+        $('.rank-panel-body').addClass('owl-theme owl-carousel');
+    }
+    else { };
+}
+let resizeAdjust = function () {
+    $(window).resize(function () {
+        /*If browser resized, check width again */
+        if ($(window).width() < 1495) {
+            $('.rank-panel-body').owlCarousel({
+                items: 1,
+                dots: false,
+                nav: false,
+                autoWidth: true,
+                margin: 15,
+            });
+            $('.rank-panel-body').addClass('owl-theme owl-carousel');
+        }
+        else {
+            $('.rank-panel-body').trigger('destroy.owl.carousel');
+            $('.rank-panel-body').removeClass('owl-theme owl-carousel');
+        }
+    });
+}
