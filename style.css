@@ -1414,6 +1414,8 @@ ScrollSpy
   display: flex;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
+  max-height: 405px;
+  overflow: hidden;
 }
 
 /*
@@ -1429,11 +1431,11 @@ ScrollSpy
   margin-bottom: 16px;
 }
 
-.hot-video-list-wrapper.sq .hot-video-item:not(:nth-child(4n + 1)) {
+.hot-video-list-wrapper.sq .hot-video-item {
   margin-left: 14px;
 }
 
-.hot-video-list-wrapper.nm .hot-video-item:not(:nth-child(6n + 1)) {
+.hot-video-list-wrapper.nm .hot-video-item {
   margin-left: 16px;
 }
 
