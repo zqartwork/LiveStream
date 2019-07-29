@@ -107,3 +107,15 @@ let resizeAdjust = function () {
         }
     });
 }
+let toggleAvatarModal = function () {
+    let avabtn = $('.avatar-btn');
+    let infoModal = $('.info-modal');
+    avabtn.click(function () {
+        infoModal.show();
+    })
+    $(document).click(function (e) {
+        if (!$(e.target).closest('.avatar-btn, .info-modal').length) {
+            $('nav').find('.info-modal').hide();
+        }
+    })
+}
