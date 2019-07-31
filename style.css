@@ -249,15 +249,108 @@ nav.sticky .left-nav li.active::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+}
+
+.unread-dot {
+  height: 24px;
+  width: 24px;
+  border-radius: 100%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-weight: 900;
+  -webkit-transform: scale(0.8);
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+}
+
+.msg-user-avatar-wrapper .unread-dot {
+  right: -8px;
+  bottom: 0;
+}
+
+#msg-icon:hover .msg-modal-mask {
+  display: block;
+}
+
+.msg-modal-mask {
+  display: none;
+  position: absolute;
+  width: 350px;
+  background: #444;
+  padding: 15px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  top: 100%;
+  right: 12px;
+  border-radius: 5px;
+}
+
+.msg-modal {
+  max-height: 70vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.msg-modal-item {
+  padding: 15px;
+  background: #555;
+  border-radius: 5px;
+}
+
+.msg-modal-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.msg-modal-item:hover {
+  background: #505050;
+}
+
+.msg-modal-body {
+  width: 100%;
+  position: relative;
+}
+
+.msg-user-avatar-wrapper {
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.msg-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.msg-title,
+.msg-cont {
+  max-width: calc(100% - 65px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .avatar-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.ava-img-wrapper {
   height: 40px;
   width: 40px;
   border-radius: 100%;
-  background: #fff;
-  position: relative;
-  cursor: pointer;
+  overflow: hidden;
 }
 
 .info-modal {
