@@ -39,7 +39,8 @@ nav ul a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffd550;
+  background: #ee3274;
+  border-radius: 5px;
 }
 
 body,
@@ -182,7 +183,7 @@ nav.sticky .left-nav li.active::after {
   margin: 0 18px 0 0;
   height: 80%;
   width: 200px;
-  background: #ffd550;
+  background: #ee3274;
 }
 
 .logo-wrapper {
@@ -196,7 +197,7 @@ nav.sticky .left-nav li.active::after {
 
 .left-nav li a:hover {
   background-color: rgba(0, 0, 0, 0);
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .left-nav li.active {
@@ -204,12 +205,12 @@ nav.sticky .left-nav li.active::after {
 }
 
 .left-nav li.active a {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .left-nav li.active::after {
   content: "";
-  background: #ffd550;
+  background: #ee3274;
   height: 5px;
   border-radius: 5px;
   width: 60%;
@@ -256,7 +257,7 @@ nav.sticky .left-nav li.active::after {
   height: 24px;
   width: 24px;
   border-radius: 100%;
-  background-color: red;
+  background-color: #ee3274;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,6 +371,25 @@ nav.sticky .left-nav li.active::after {
   font-size: 14px;
 }
 
+.signout-btn {
+  padding: 15px;
+}
+
+.signout-btn:hover {
+  background: none;
+  color: #ee3274;
+}
+
+.signout-btn i {
+  margin-right: 5px;
+}
+
+.logout-img-wrapper {
+  height: 24px;
+  width: 25px;
+  margin-right: 5px;
+}
+
 .info-modal-user-view {
   height: auto;
   line-height: 1;
@@ -427,7 +447,7 @@ nav.sticky .left-nav li.active::after {
 }
 
 .pocket-title {
-  height: 48px;
+  height: 32px;
   line-height: 48px;
 }
 
@@ -464,7 +484,8 @@ nav.sticky .left-nav li.active::after {
 }
 
 .pocket-num {
-  color: #ffd550;
+  color: #ff669c;
+  font-weight: 700;
 }
 
 .pocket-li-pos {
@@ -477,16 +498,16 @@ nav.sticky .left-nav li.active::after {
   display: inline-block;
   padding: 5px 10px;
   border-radius: 25px;
-  background-color: #ffd550;
-  color: #000;
+  background-color: #ee3274;
+  color: #fff;
   position: absolute;
   right: 20px;
-  top: 12px;
+  top: 14px;
   font-size: 14px;
 }
 
 .charge-btn:hover {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 .info-modal-fuc-btn {
@@ -497,8 +518,9 @@ nav.sticky .left-nav li.active::after {
   height: 95px;
 }
 
-.info-modal-main-content .info-modal-fuc-btn i {
-  font-size: 32px;
+.fuc-img-wrapper {
+  height: 32px;
+  width: 32px;
   margin-bottom: 5px;
 }
 
@@ -572,7 +594,7 @@ SideNav 設置相關
 }
 
 .sidenav li a .pocket-title {
-  height: 48px;
+  height: 32px;
   line-height: 48px;
 }
 
@@ -600,17 +622,13 @@ SideNav 設置相關
   margin-right: 10px;
 }
 
-.sidenav li a .pocket-num {
-  color: #ffd550;
-}
-
 .sidenav li a.charge-btn {
   width: auto;
   height: auto;
   display: inline-block;
   padding: 5px 10px;
   border-radius: 25px;
-  background-color: #ffd550;
+  background-color: #ee3274;
   color: #000;
   position: absolute;
   right: 20px;
@@ -683,11 +701,11 @@ SideNav 設置相關
 }
 
 #hotspot {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 #hotspot:hover {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 /*
@@ -729,11 +747,11 @@ ScrollSpy
 }
 
 .table-of-contents a.active .dot {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 .table-of-contents a.active {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .table-of-contents li {
@@ -929,9 +947,9 @@ ScrollSpy
 }
 
 .main-video-btn:hover {
-  background-color: #ffd550;
+  background-color: #ee3274;
   color: #000;
-  border-color: #ffd550;
+  border-color: #ee3274;
 }
 
 .thumb-wrapper {
@@ -956,7 +974,7 @@ ScrollSpy
 }
 
 .thumb-item.current {
-  border-color: #ffd550;
+  border-color: #ee3274;
   border-radius: 5px;
   position: relative;
 }
@@ -967,7 +985,7 @@ ScrollSpy
   height: 0;
   border-style: solid;
   border-width: 0 12px 13px 12px;
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffd550 rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ee3274 rgba(0, 0, 0, 0);
   position: absolute;
   top: -15px;
   left: 24px;
@@ -1225,7 +1243,7 @@ ScrollSpy
 }
 
 .program-type.active {
-  background: #ffd550;
+  background: #ee3274;
   color: #000;
   font-weight: 700;
 }
@@ -1316,7 +1334,7 @@ ScrollSpy
 }
 
 .preserved-btn:hover {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .preserved-btn-l {
@@ -1326,9 +1344,9 @@ ScrollSpy
 }
 
 .preserved-btn-l:hover {
-  background-color: #ffd550;
+  background-color: #ee3274;
   color: #000;
-  border-color: #ffd550;
+  border-color: #ee3274;
 }
 
 .preserved-text {
@@ -1337,7 +1355,7 @@ ScrollSpy
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 .owl-theme .owl-nav {
@@ -1356,7 +1374,7 @@ ScrollSpy
 
 .owl-carousel .owl-nav button.owl-next:hover,
 .owl-carousel .owl-nav button.owl-prev:hover {
-  background-color: #ffd550;
+  background-color: #ee3274;
 }
 
 .owl-carousel .owl-nav button.owl-next:hover .arr,
@@ -1561,15 +1579,15 @@ ScrollSpy
 }
 
 .matchlist-preserve-btn:hover {
-  background: #ffd550;
+  background: #ee3274;
   color: #000;
-  border-color: #ffd550;
+  border-color: #ee3274;
 }
 
 .matchlist-preserve-btn.preserved {
-  background: #ffd550;
+  background: #ee3274;
   color: #000;
-  border-color: #ffd550;
+  border-color: #ee3274;
 }
 
 .matchlist-preserve-btn.ended {
@@ -1623,11 +1641,11 @@ ScrollSpy
 }
 
 .matchlist-play-btn:hover {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .matchlist-play-btn:hover i {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .matchlist-carousel.owl-carousel .owl-nav button.owl-prev {
@@ -1726,7 +1744,7 @@ ScrollSpy
 
 .news-carousel.owl-carousel .owl-nav button.owl-prev:hover i,
 .news-carousel.owl-carousel .owl-nav button.owl-next:hover i {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .news-carousel.owl-carousel .owl-nav button.owl-prev {
@@ -1883,7 +1901,7 @@ footer .divider {
 }
 
 .footer_item:hover {
-  color: #ffd550;
+  color: #ee3274;
 }
 
 .footer_item_title {

@@ -9,7 +9,8 @@ $lgray: #d8d8d8;
 $w: #fff;
 $b: #000;
 $font: 微軟正黑體;
-$topic: #ffd550;
+$topic: #ee3274;
+$topicLight: #ff669c;
 
 /*
 ------------------
@@ -52,6 +53,7 @@ nav ul a {
 }
 ::-webkit-scrollbar-thumb {
   background: $topic;
+  border-radius: 5px;
 }
 body,
 html {
@@ -219,7 +221,7 @@ nav.sticky {
   height: 24px;
   width: 24px;
   border-radius: 100%;
-  background-color: red;
+  background-color: $topic;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,6 +318,21 @@ nav.sticky {
     font-size: 14px;
   }
 }
+.signout-btn {
+  padding: 15px;
+  &:hover {
+    background: none;
+    color: $topic;
+  }
+  i {
+    margin-right: 5px;
+  }
+}
+.logout-img-wrapper {
+  height: 24px;
+  width: 25px;
+  margin-right: 5px;
+}
 .info-modal-user-view {
   height: auto;
   line-height: 1;
@@ -364,7 +381,7 @@ nav.sticky {
   padding-left: 20px;
 }
 .pocket-title {
-  height: 48px;
+  height: 32px;
   line-height: 48px;
 }
 .pocket-cont-wrapper {
@@ -396,7 +413,8 @@ nav.sticky {
   margin-right: 10px;
 }
 .pocket-num {
-  color: $topic;
+  color: $topicLight;
+  font-weight: 700;
 }
 .pocket-li-pos {
   position: relative;
@@ -408,10 +426,10 @@ nav.sticky {
   padding: 5px 10px;
   border-radius: 25px;
   background-color: $topic;
-  color: $b;
+  color: $w;
   position: absolute;
   right: 20px;
-  top: 12px;
+  top: 14px;
 
   font-size: 14px;
   &:hover {
@@ -424,11 +442,13 @@ nav.sticky {
 }
 .info-modal-main-content .info-modal-fuc-btn {
   height: 95px;
-  i {
-    font-size: 32px;
-    margin-bottom: 5px;
-  }
 }
+.fuc-img-wrapper {
+  height: 32px;
+  width: 32px;
+  margin-bottom: 5px;
+}
+
 .nowrap-text {
   white-space: nowrap;
 }
@@ -483,7 +503,7 @@ SideNav 設置相關
     white-space: nowrap;
   }
   .pocket-title {
-    height: 48px;
+    height: 32px;
     line-height: 48px;
   }
   .pocket-flex-wrapper {
@@ -500,9 +520,6 @@ SideNav 設置相關
   .pocket-text {
     color: $mdgray;
     margin-right: 10px;
-  }
-  .pocket-num {
-    color: $topic;
   }
   &.charge-btn {
     width: auto;

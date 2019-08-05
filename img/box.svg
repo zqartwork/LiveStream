@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="box" transform="translate(-5747 3086)">
+    <rect id="Rectangle_162" data-name="Rectangle 162" width="32" height="32" transform="translate(5747 -3086)" fill="rgba(255,255,255,0)"/>
+    <g id="Group_226" data-name="Group 226" transform="translate(-0.577 0.495)">
+      <path id="Path_64" data-name="Path 64" d="M5753.686-3071.076s2.865-2.547,5.623-2.493,3.607,3.554,7.957,3.13,5.464-1.538,5.464-1.538l.69,3.554v7.161H5753.1v-7.161Z" fill="#ee3274"/>
+      <g id="downloading-drawer" transform="translate(5752.577 -3111.278)">
+        <g id="Group_225" data-name="Group 225" transform="translate(0 31.783)">
+          <path id="Path_63" data-name="Path 63" d="M18.813,33.127a2.053,2.053,0,0,0-1.806-1.344H4.367a1.859,1.859,0,0,0-1.68,1.344L0,42.511v7.412a.673.673,0,0,0,.672.672H20.828a.674.674,0,0,0,.672-.672V42.595Zm-14.855.447c.062-.138.219-.447.41-.447H17.007c.184,0,.4.189.546.478l2.533,8.928H14.109a.674.674,0,0,0-.672.672v2.016H8.063V43.2a.673.673,0,0,0-.672-.672h-6Zm16.2,15.678H1.344V43.877H6.719v2.016a.673.673,0,0,0,.672.672h6.719a.674.674,0,0,0,.672-.672V43.877h5.375v5.375Z" transform="translate(0 -31.783)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

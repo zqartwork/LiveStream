@@ -22,6 +22,7 @@
     <nav>
         <div class="container">
             <div class="nav-wrapper flex-wrapper">
+                <!-- 左側主要選擇 -->
                 <div class="flex-wrapper just-left">
                     <a href="#!" class="logo">
                         <div class="logo-wrapper">
@@ -37,10 +38,11 @@
                         <li><a href="index.html">快讯</a></li>
                     </ul>
                 </div>
+                <!-- Hamburger -->
                 <a href="#" data-target="m-sidenav" class="sidenav-trigger"><i class="material-icons">
                         menu
                     </i></a>
-
+                <!-- 右側主要選單 -->
                 <div class="flex-wrapper just-right md-none">
 
                     <a href="#" class="fuc-btn">
@@ -255,10 +257,17 @@
                         <div class="ava-img-wrapper">
                             <img src="img/avatar.png" alt="">
                         </div>
+                        <!-- 登入之後 -->
                         <div id="info-modal" class="info-modal">
                             <div class="info-modal-main-content">
                                 <ul>
                                     <li>
+                                        <a href="" class="signout-btn flex-wrapper just-right">
+                                            <div class="logout-img-wrapper">
+                                                <img src="img/logout.svg" alt="">
+                                            </div>
+                                            登出
+                                        </a>
                                         <a class="info-modal-user-view">
                                             <div class="info-modal-user-view-container">
                                                 <div class="flex-wrapper just-left">
@@ -286,7 +295,7 @@
                                             <div class="pocket-cont-wrapper">
                                                 <div class="pocket-flex-wrapper">
                                                     <div class="pocket-icon-wrapper">
-                                                        <img src="img/burn.svg" alt="">
+                                                        <img src="img/graphic_star_64.png" alt="">
                                                     </div>
                                                 </div>
                                                 <span class="pocket-text">貨幣名稱</span>
@@ -301,30 +310,30 @@
                                         <div href="index.html" class="info-modal-fuc-btn">
                                             <div class="flex-wrapper">
                                                 <a class="flex-wrapper flex-column">
-                                                    <i class="material-icons">
-                                                        people
-                                                    </i>
+                                                    <div class="fuc-img-wrapper">
+                                                        <img src="img/ic_self_active.svg" alt="">
+                                                    </div>
                                                     <div class="nowrap-text">個人中心</div>
 
                                                 </a>
                                                 <a class="flex-wrapper flex-column">
-                                                    <i class="material-icons">
-                                                        all_inbox
-                                                    </i>
+                                                    <div class="fuc-img-wrapper">
+                                                        <img src="img/ic_collection_active.svg" alt="">
+                                                    </div>
                                                     <div class="nowrap-text">訂閱片櫃</div>
 
                                                 </a>
                                                 <a class="flex-wrapper flex-column">
-                                                    <i class="material-icons">
-                                                        question_answer
-                                                    </i>
+                                                    <div class="fuc-img-wrapper">
+                                                        <img src="img/ic_chat.svg" alt="">
+                                                    </div>
                                                     <div class="nowrap-text">訊息中心</div>
 
                                                 </a>
                                                 <a class="flex-wrapper flex-column">
-                                                    <i class="material-icons">
-                                                        video_call
-                                                    </i>
+                                                    <div class="fuc-img-wrapper">
+                                                        <img src="img/ic_text_send.svg" alt="">
+                                                    </div>
                                                     <div class="nowrap-text">直播去</div>
 
                                                 </a>
@@ -415,6 +424,7 @@
         </div>
 
     </ul>
+
     <!-- 主要舞台區 -->
     <div id="mainstage" class="section main-stage-section scrollspy">
         <div class="container">
