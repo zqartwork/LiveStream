@@ -304,6 +304,16 @@ nav.sticky .left-nav li.active::after {
   overflow-x: hidden;
 }
 
+#msg-modal::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+  border-radius: 5px;
+}
+
+#msg-modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .msg-modal-item {
   padding: 15px;
   background: #555;
