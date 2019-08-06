@@ -1908,7 +1908,71 @@ RWD Setting
     max-width: calc((100% / 3 - 14px) + (14px / 3));
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 687px) {
+  .hot-video-item:nth-last-child(-n + 2) {
+    display: initial;
+  }
+  .hot-video-list-wrapper.sq .hot-video-item,
+  .hot-video-list-wrapper.nm .hot-video-item {
+    max-width: calc((100% / 2 - 14px) + (14px / 2));
+  }
+  .section-title {
+    font-size: 16px;
+  }
+  .sm-convert-column {
+    flex-direction: column;
+  }
+  .sm-convert-column .sm-mb-10 {
+    margin-bottom: 15px;
+  }
+  .sm-hide-more {
+    display: none;
+  }
+  .select_container {
+    margin: 0;
+  }
+  .program-left-part {
+    transform: translateX(calc(-100% - 20px));
+    transition: 0.5s;
+  }
+  .program-wrapper {
+    position: relative;
+  }
+  .sm-program-trigger::before {
+    content: "節目種類";
+    position: absolute;
+    height: 100%;
+    width: 42px;
+    display: flex;
+    flex-direction: column;
+    color: $w;
+    align-items: center;
+    justify-content: center;
+    padding: 0 13px;
+
+    left: -20px;
+    background-color: $fr;
+    z-index: 5;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .sm-program-trigger::after {
+    content: "▶";
+    position: absolute;
+    height: 50%;
+    width: 15px;
+    left: 22px;
+    bottom: calc(50% - 135px / 2);
+    display: flex;
+    flex-direction: column;
+    color: $w;
+    align-items: center;
+    justify-content: center;
+    background-color: $fr;
+    z-index: 5;
+    font-size: 1px;
+    border-radius: 0 3px 3px 0;
+  }
 }
 // reset Mataerialize
 @media only screen and (min-width: 993px) {
