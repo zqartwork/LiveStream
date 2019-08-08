@@ -245,17 +245,28 @@
                                 </div>
                             </div>
                         </div>
-
                     </a>
-                    <a href="#" class="fuc-btn">
+                    <a href="#" class="fuc-btn" id="app-download-icon">
                         <i class="material-icons">
                             mobile_friendly
                         </i>
                         <span class="fuc_tt">客戶端</span>
+                        <div class="app-modal-mask">
+                            <div id="app-modal">
+                                <div class="flex-wrapper flex-column">
+                                    <div class="app-download-text">
+                                        掃描二維碼
+                                    </div>
+                                    <div class="qr-code-wrapper">
+                                        <img src="img/qrcode.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </a>
-                    <a href="#" class="fuc-btn avatar-btn" id="info-modal-trigger">
+                    <div class="fuc-btn avatar-btn">
                         <div class="ava-img-wrapper">
-                            <img src="img/avatar.png" alt="">
+                            <img src="img/avatar.png" alt="" id="info-modal-trigger" />
                         </div>
                         <!-- 登入之後 -->
                         <div id="info-modal" class="info-modal">
@@ -268,6 +279,8 @@
                                             </div>
                                             登出
                                         </a>
+                                        <div class="divider"></div>
+
                                         <a class="info-modal-user-view">
                                             <div class="info-modal-user-view-container">
                                                 <div class="flex-wrapper just-left">
@@ -343,7 +356,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2319,7 +2332,6 @@
             madeCarousel();
         });
         resizeAdjust();
-        toggleAvatarModal();
     </script>
 </body>
 
