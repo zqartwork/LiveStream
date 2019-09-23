@@ -2,6 +2,13 @@ let stickyNav = function () {
     $(document).on('scroll', function () {
         if ($(window).scrollTop() > 0) {
             $('nav').addClass('sticky');
+            $('.app_pre_panel').slideUp();
+            $('.app_fix_panel').animate({
+                'bottom': '14px'
+            }, 1000)
+            setTimeout(function () {
+                $('.app_fix_panel').addClass('shrink');
+            }, 3000)
         }
         else {
             $('nav').removeClass('sticky');
@@ -55,6 +62,8 @@ let madeCarousel = function () {
     });
     $('.matchlist-carousel').owlCarousel({
         dots: false,
+        autoWidth: true,
+        loop: true,
         nav: true,
         margin: 20,
         navText: ["<i class='material-icons arr'>chevron_left</i>", "<i class='material-icons arr'>chevron_right</i>"],
@@ -106,4 +115,23 @@ let resizeAdjust = function () {
             $('.rank-panel-body').removeClass('owl-theme owl-carousel');
         }
     });
+}
+let changeLoginTab = function () {
+
+}
+let slideAPPEnter = function () {
+    $('.app_pre_panel').animate({
+        top: 0
+    }, 1000);
+}
+let slideAPPOut = function () {
+    $('.app_d_close').click(function () {
+        $('.app_pre_panel').animate({
+            top: '-250px'
+        }, 1000);
+    })
+    $('#app-fix-close').click(function () {
+        $('.app_fix_panel').addClass('shrink');
+    });
+
 }

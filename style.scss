@@ -1,16 +1,16 @@
-$two: #222;
-$thr: #333;
-$fr: #444;
-$fv: #555;
-$sv: #777;
+$two: #001;
+$thr: #1f1f20;
+$fr: #343536;
+$fv: #444;
+$sv: #555;
 $ni: #999;
 $mdgray: #c2c2c2;
 $lgray: #d8d8d8;
 $w: #fff;
 $b: #000;
 $font: 微軟正黑體;
-$topic: #ee3274;
-$topicLight: #ff669c;
+$topic: #37b1f8;
+$topicLight: #66baff;
 
 /*
 ------------------
@@ -82,6 +82,111 @@ video {
   width: 100%;
   height: 100%;
   max-width: 1440px;
+  position: relative;
+}
+.cmc {
+  width: 100%;
+  z-index: 10;
+  margin: 0 0 20px 0;
+}
+.app_pre_panel {
+  position: absolute;
+  z-index: 1000;
+  top: -250px;
+  right: calc(10%);
+  height: 200px;
+  width: 500px;
+  background-image: url(img/app-downlaod.png);
+  box-shadow: 0 3px 6px #000;
+  border-radius: 5px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.app_d_title {
+  margin: 20px 0 10px 0;
+}
+.app_d_img-wrap {
+  border-radius: 5px;
+  border: 1px solid #fff;
+  width: 120px;
+  margin: 0 auto;
+}
+.app_d_body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 5px;
+}
+.app_d_body img {
+  height: 120px;
+  width: auto;
+}
+.app_d_close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.app_fix_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 3px 6px #000;
+  background: $thr;
+  border-radius: 5px;
+  right: 14px;
+  bottom: -250px;
+  img {
+    height: 150px;
+    width: 150px;
+  }
+  &.shrink {
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      height: 80%;
+      width: auto;
+    }
+    .app_f_title {
+      display: none;
+    }
+    #app-fix-close {
+      display: none;
+    }
+    &:hover {
+      height: 200px;
+      width: 200px;
+      img {
+        height: 150px;
+        width: 150px;
+      }
+      .app_f_title {
+        display: block;
+      }
+    }
+  }
+}
+img.app_d_g {
+  position: absolute;
+  height: 200px;
+  width: auto;
+  top: -50px;
+  &_l {
+    left: -50px;
+  }
+  &_r {
+    right: -50px;
+    top: 0px;
+  }
 }
 .flex-wrapper {
   display: flex;
@@ -164,10 +269,13 @@ nav.sticky {
   //暫時制定的高度
   height: 80%;
   width: 200px;
-  background: $topic;
+  // background: $topic;
 }
 .logo-wrapper {
   height: 100%;
+  img {
+    object-fit: contain;
+  }
 }
 .left-nav li {
   height: 100%;
@@ -677,7 +785,7 @@ ScrollSpy
 .dot {
   height: 30px;
   width: 10px;
-  background: $sv;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   position: absolute;
   left: 20px;
@@ -741,26 +849,27 @@ ScrollSpy
 主要舞台區
 ------------------
 */
+
 .section {
   width: 100%;
   padding: 0;
   height: auto;
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .main-stage-section {
-  height: 760px;
+  height: 680px;
   margin-top: 0px;
   margin-bottom: 0;
   position: relative;
 
   &::before {
     content: "";
-    background-image: url(img/bg.png);
+    background-image: url(img/bg.jpg);
     background-color: $thr;
     background-position: center;
     background-size: cover;
-    height: 840px;
+    height: 750px;
     width: 100%;
     position: absolute;
     top: -75px;
@@ -770,12 +879,13 @@ ScrollSpy
 }
 .video-stage-wrapper {
   height: 100%;
-  width: 1008px;
-  margin-right: 40px;
+  width: 768px;
+  margin-right: 24px;
+  padding-top: 55px;
 }
 .main-video-wrapper {
-  height: 576px;
-  width: calc(576px * 16 / 9);
+  height: 432px;
+  width: calc(432px * 16 / 9);
   position: relative;
   max-height: 100%;
   max-width: 100%;
@@ -977,7 +1087,8 @@ ScrollSpy
   font-size: 14px;
 }
 .mask {
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   height: 100%;
   width: 100%;
   position: absolute;
@@ -995,7 +1106,7 @@ ScrollSpy
 */
 .rank-section {
   height: 100%;
-  width: 400px;
+  width: 350px;
   color: $w;
 }
 .rank-section-md {
@@ -1008,8 +1119,8 @@ ScrollSpy
 */
 .rank-panel-section {
   width: 100%;
-  height: 684px;
-  background: $fr;
+  height: 595px;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   padding: 0 24px;
 }
@@ -1042,7 +1153,7 @@ ScrollSpy
 ------------------
 */
 .rank-panel-body {
-  max-height: 420px;
+  max-height: 330px;
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
@@ -1058,7 +1169,7 @@ ScrollSpy
 }
 .rank-panel-item {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   .rank-num {
     min-width: 20px;
   }
@@ -1083,6 +1194,54 @@ ScrollSpy
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* 20190903 */
+
+// .flex-wrap-md {
+//   -ms-flex-wrap: wrap;
+//   flex-wrap: wrap;
+// }
+// .main-stage-section {
+//   height: auto;
+// }
+// .video-stage-wrapper {
+//   margin: 0;
+// }
+// .rank-section {
+//   margin-top: 20px;
+//   width: 100%;
+// }
+// .rank-panel-section {
+//   height: auto;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   padding-left: 0;
+// }
+// .rank-panel-head {
+//   width: 220px;
+// }
+// .rank-panel-body {
+//   height: auto;
+//   max-height: 256px;
+//   overflow: auto;
+//   margin: auto 0;
+// }
+// .rank-panel-body .item .rank-panel-item {
+//   margin: 0;
+// }
+// .rank-panel-body .item .rank-panel-item:first-child {
+//   margin-bottom: 24px;
+// }
+// .rank-panel-item {
+//   width: 280px;
+//   overflow: hidden;
+// }
+// .rank-panel-item-intro {
+//   max-width: 190px;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
 /*
 ------------------
 節目表
@@ -1091,7 +1250,7 @@ ScrollSpy
 .program-section {
   margin-bottom: 80px;
   margin-top: 0;
-  padding-top: 75px;
+  padding-top: 25px;
   height: auto;
 }
 .program-wrapper {
@@ -1150,8 +1309,7 @@ ScrollSpy
   height: 270px;
 }
 .program-right-part {
-  width: calc(100% - 230px);
-  padding-left: 35px;
+  width: calc(100%);
 }
 .program-item {
   height: 128px;
@@ -1186,11 +1344,12 @@ ScrollSpy
 
   .program-date {
     color: $w;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
   }
   .program-title {
     color: $w;
-    font-size: 16px;
+    font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
     max-width: 196px;
@@ -1373,7 +1532,7 @@ ScrollSpy
 */
 .match-section {
   height: auto;
-  margin-bottom: 80px;
+  margin-bottom: 0px;
 }
 .matchlist-wrapper {
   background: $thr;
@@ -1386,16 +1545,40 @@ ScrollSpy
   max-width: 100%;
   // overflow: hidden;
 }
+.more-match-brn-item {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.more-match-btn {
+  color: $topic;
+  padding: 10px 25px;
+  border: 1px solid $topic;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    color: #000;
+    background: $topic;
+  }
+}
 .matchlist-item {
   background: $fr;
   border-radius: 5px;
   height: 180px;
-  // width: 350px;
+  min-width: 350px;
 }
 .matchlist-header {
   border-bottom: 1px solid $thr;
   color: $w;
   padding: 10px 20px;
+}
+.matchlist-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 .matchlist-date {
   font-weight: 700;
@@ -1436,12 +1619,13 @@ ScrollSpy
   white-space: nowrap;
 }
 .matchlist-body {
-  padding: 0 35px;
+  padding: 0 25px;
   height: calc(100% - 47px);
 }
 .matchlist-img-wrapper {
   height: 60px;
   width: 60px;
+  object-position: center;
 }
 .matchlist-info-wrapper {
   text-align: center;
@@ -1453,6 +1637,10 @@ ScrollSpy
   overflow: hidden;
   white-space: nowrap;
   margin: 0 14px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
 }
 .matchlist-time,
 .matchlist-name,
@@ -1483,6 +1671,11 @@ ScrollSpy
 .matchlist-carousel.owl-carousel .owl-nav button.owl-next {
   right: -65px;
   top: -130px;
+}
+.teamname {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 12px;
 }
 /*
 ------------------
@@ -1567,7 +1760,7 @@ ScrollSpy
   right: 0px;
 }
 .news-left-part {
-  margin-right: 24px;
+  margin-left: 24px;
   width: 100%;
   max-width: 451px;
   position: relative;
@@ -1625,6 +1818,38 @@ ScrollSpy
 
 .hot-video-head {
   height: auto;
+  position: relative;
+
+  &:hover .enter-mask {
+    opacity: 1;
+  }
+}
+.enter-mask {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.enter-mask-btn {
+  border: 1px solid #fff;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
 }
 .hot-video-thumb-wrapper {
   width: 100%;
@@ -1852,6 +2077,7 @@ RWD Setting
   }
   .news-left-part {
     width: 100%;
+    margin-left: 0;
   }
   .hot-video-item:nth-last-child(-n + 4) {
     display: none;
@@ -1918,11 +2144,30 @@ RWD Setting
   .section {
     margin-top: 0;
   }
+  .logo {
+    height: 60%;
+    img {
+      object-position: left;
+    }
+  }
+  .video-stage-wrapper {
+    padding-top: 14px;
+  }
+  .cmc {
+    overflow: hidden;
+    margin-top: 20px;
+
+    img {
+      min-height: 60px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
 }
 
 @media (max-width: 998px) {
   .thumb-wrapper .thumb-item:last-child {
-    display: none;
+    // display: none;
   }
   .thumb-wrapper .thumb-item:nth-child(3) {
     margin: 0;
@@ -1988,7 +2233,7 @@ RWD Setting
     position: absolute;
     height: 100%;
     width: 42px;
-    display: flex;
+    display: none;
     flex-direction: column;
     color: $w;
     align-items: center;
@@ -2028,5 +2273,211 @@ RWD Setting
 @media only screen and (min-width: 1061px) {
   nav a.sidenav-trigger {
     display: none;
+  }
+}
+/*
+------------------
+登入彈窗與遮罩
+------------------
+*/
+// Modal出現時不能滾動
+body.modal-open {
+  overflow: hidden;
+}
+.login-modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  .f-left {
+    float: left;
+  }
+  .f-right {
+    float: right;
+  }
+}
+.login-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+}
+.login-modal-container {
+  height: 450px;
+  width: 100%;
+  max-width: 450px;
+
+  background: $fr;
+  position: relative;
+}
+.login-tab-wrapper {
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: $lgray;
+}
+.tabItem {
+  color: $topicLight;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+
+  &.active {
+    border: 1px solid $topic;
+    color: $w;
+    display: none;
+  }
+}
+.close-btn {
+  color: $w;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  i {
+    font-size: 24px;
+    color: $lgray;
+  }
+}
+.login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $topic;
+  padding: 24px;
+}
+.login-modal .divider {
+  background-color: $sv;
+}
+.login-input-wrapper {
+  padding: 24px;
+  .select_container {
+    margin: 0 10px 0 0;
+    height: 50px;
+
+    .custom_select {
+      position: initial;
+      border-radius: 0px;
+      background: $fr;
+      border: 1px solid $sv;
+      padding: 0;
+      &:focus {
+        border: 1px solid $topic;
+      }
+    }
+    .select_menu {
+      width: 100%;
+      border: 1px solid $sv;
+      margin-top: 10px;
+      li {
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 14px;
+        background: $fr;
+
+        &:hover {
+          background: $thr;
+        }
+      }
+    }
+  }
+}
+.input-login-info {
+  height: 50px;
+  line-height: 50px;
+  color: $w;
+  border: 1px solid $sv;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 14px;
+
+  &[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: $mdgray;
+  }
+  &[placeholder]:focus::before {
+    content: "";
+  }
+
+  &.mt-1 {
+    margin-top: 14px;
+  }
+
+  &:focus {
+    border-color: $topic;
+  }
+}
+.mainFucBtn {
+  background-color: $topic;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  color: $w;
+  text-align: center;
+  margin-top: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.forgotpass-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: $lgray;
+  cursor: default;
+  height: 40px;
+}
+.login-modal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: $lgray;
+  font-size: 14px;
+  cursor: default;
+  margin-bottom: 24px;
+}
+
+.sublink {
+  color: $topicLight;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  margin: 0 5px;
+}
+@media (max-width: 768px) {
+  .app_pre_panel {
+    left: calc(50% - 160px);
+    width: 320px;
+  }
+  img.app_d_g {
+    position: absolute;
+    height: 200px;
+    width: auto;
+    top: -50px;
+    &_l {
+      left: -120px;
+    }
+    &_r {
+      right: -140px;
+      top: 0px;
+    }
   }
 }
