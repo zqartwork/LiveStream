@@ -1023,7 +1023,7 @@ ScrollSpy
 }
 .thumb-item-title {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   color: $w;
 
   top: 10px;
@@ -1042,7 +1042,7 @@ ScrollSpy
 }
 .thumb-info-wrapper {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 
   color: $w;
 
@@ -1092,6 +1092,7 @@ ScrollSpy
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 1;
 }
 .thumb-img-wrapper {
   height: 100%;
@@ -1331,12 +1332,16 @@ ScrollSpy
     margin: 0 14px 0 0;
     width: 480px;
   }
-  &:hover {
+  &:hover .program-item-img img {
+    transform: scale(1.1);
   }
+}
+.program-item-img img {
+  transition-duration: 0.3s;
 }
 .program-caption-wrapper {
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   bottom: 14px;
   left: 0;
 
@@ -1819,6 +1824,7 @@ ScrollSpy
 .hot-video-head {
   height: auto;
   position: relative;
+  cursor: pointer;
 
   &:hover .enter-mask {
     opacity: 1;
